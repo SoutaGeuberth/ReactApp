@@ -3,6 +3,30 @@ import { RightContent } from "./RightContent";
 import { LeftContent } from "./LeftContent";
 
 export function Navbar() {
+  const menuItems = [
+    {
+      name: "Prenda Superior",
+      href: "#",
+      subItems: [
+        { label: "Camisa", href: "#" },
+        { label: "Camiseta", href: "#" },
+        { label: "Abrigo", href: "#" },
+        { label: "Jersey", href: "#" },
+        { label: "JP", href: "#" },
+      ],
+    },
+    {
+      name: "Prenda Inferior",
+      href: "#",
+      subItems: [
+        { label: "Pantalon", href: "#" },
+        { label: "Jeans", href: "#" },
+        { label: "Sudaderas", href: "#" },
+        { label: "Shorts", href: "#" },
+      ],
+    },
+  ];
+
   return (
     <HStack
       w="full"
@@ -13,7 +37,7 @@ export function Navbar() {
       borderBottomWidth={1}
     >
       {/* Left content */}
-      <LeftContent />
+      <LeftContent data={menuItems} />
       {/* Right content */}
       <RightContent />
       {/*mobile menu*/}
