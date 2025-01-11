@@ -65,8 +65,8 @@ export function LeftContent({ data }) {
                   </PopoverTrigger>
                   <PopoverContent width="auto">
                     <PopoverBody>
-                      {prop.subItems.map((subItem, index2) => (
-                        <Button key={index2} variant={"ghost"}>
+                      {prop.subItems.map((subItem, index) => (
+                        <Button key={index} variant={"ghost"} size={"lg"}>
                           {subItem.label}
                         </Button>
                       ))}
@@ -123,7 +123,7 @@ export function LeftContent({ data }) {
       <Heading color="white" fontWeight="bold" fontStyle="italic">
         {" "}
         {/* Added some styles */}
-        Hola
+        Gang Orca Clothing
       </Heading>
     </Flex>
   );
