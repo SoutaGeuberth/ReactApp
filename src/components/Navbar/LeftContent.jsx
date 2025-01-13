@@ -1,10 +1,9 @@
-import { Button, Flex, Heading, HStack } from "@chakra-ui/react";
+import { Button, Flex, Group, Heading, HStack } from "@chakra-ui/react";
 import {
   DrawerBackdrop,
   DrawerBody,
   DrawerCloseTrigger,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerRoot,
   DrawerTitle,
@@ -81,47 +80,68 @@ export function LeftContent({ data }) {
           <DrawerBody>
             {/* For better customizations of order at future */}
             <Flex justify={"space-between"} gap={1} marginEnd={"auto"}>
-              <Flex wrap={"wrap"} display={{ base: "none", md: "flex" }}>
+              <Group
+                wrap={"wrap"}
+                display={{ base: "none", md: "flex" }}
+                fontFamily={"serif"}
+                fontWeight={"light"}
+                fontStyle={"italic"}
+              >
                 <Button variant={"ghost"}>Home</Button>
                 <Button variant={"ghost"}>About</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
-              </Flex>
-              <Flex wrap={"wrap"} display={{ base: "none", md: "flex" }}>
+                <Button variant={"ghost"}>Contact</Button>
+                <Button variant={"ghost"}>Services</Button>
+                <Button variant={"ghost"}>Contact</Button>
+              </Group>
+
+              <Group
+                wrap={"wrap"}
+                display={{ base: "none", md: "flex" }}
+                fontFamily={"serif"}
+                fontWeight={"light"}
+                fontStyle={"italic"}
+              >
                 <Button variant={"ghost"}>Home</Button>
                 <Button variant={"ghost"}>About</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
-                <Button variant={"ghost"}>Blog</Button>
-                <Button variant={"ghost"}>saowqop</Button>
+                <Button variant={"ghost"}>Contact</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
-                <Button variant={"ghost"}>Blog</Button>
-              </Flex>
-              <Flex wrap={"wrap"} display={{ base: "none", md: "flex" }}>
+              </Group>
+              <Group
+                wrap={"wrap"}
+                display={{ base: "none", md: "flex" }}
+                fontFamily={"serif"}
+                fontWeight={"light"}
+                fontStyle={"italic"}
+              >
                 <Button variant={"ghost"}>Home</Button>
                 <Button variant={"ghost"}>About</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
-                <Button variant={"ghost"}>Blog</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
-                <Button variant={"ghost"}>Blog</Button>
+                <Button variant={"ghost"}>Contact</Button>
                 <Button variant={"ghost"}>Services</Button>
                 <Button variant={"ghost"}>Contact</Button>
-                <Button variant={"ghost"}>Blog</Button>
-              </Flex>
+              </Group>
             </Flex>
           </DrawerBody>
-          <DrawerFooter />
         </DrawerContent>
       </DrawerRoot>
-      <Heading color="white" fontWeight="bold" fontStyle="italic">
-        {" "}
+      <Heading
+        color="white"
+        fontFamily={"serif"}
+        fontWeight={"light"}
+        fontStyle={"italic"}
+      >
         {/* Added some styles */}
         Gang Orca Clothing
       </Heading>
