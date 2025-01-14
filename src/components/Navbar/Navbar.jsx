@@ -32,7 +32,7 @@ export function Navbar() {
       w="full"
       alignItems={"center"}
       justifyContent={"space-between"}
-      p={2}
+      p={3}
       backgroundColor={"black"}
       borderBottomWidth={1}
     >
