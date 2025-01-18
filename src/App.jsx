@@ -4,18 +4,30 @@ import { Banner } from "./components/Banner";
 import { BodyLayout } from "./components/BodyLayout";
 import { ClothCard } from "./components/ClothCard";
 import { Footer } from "./components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [filtro, setFiltro] = useState("");
-  const listaprendas = [
-    {
-      tittle: "camiseta",
-      cost: "450",
-      src: "https://http2.mlstatic.com/D_NQ_NP_805158-MLM75310632986_032024-O.webp",
-      categoria: "camiseta",
-    },
-  ];
+  const [listaprendas, setListaprendas] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5002/listaprendas")
+      .then((response) => {
+        // Verificar si la respuesta fue exitosa
+        if (!response.ok) {
+          throw new Error("Error al obtener los datos");
+        }
+        return response.json(); // Convertir la respuesta en JSON
+      })
+      .then((data) => {
+        setListaprendas(data);
+        // Aquí puedes hacer lo que necesites con los datos recibidos
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+
+  useEffect(() => console.log("Cambie Filtro"), [filtro]);
   return (
     <Provider>
       <Navbar setFiltro={setFiltro} />
