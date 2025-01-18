@@ -2,17 +2,18 @@ import { HStack } from "@chakra-ui/react";
 import { RightContent } from "./RightContent";
 import { LeftContent } from "./LeftContent";
 
-export function Navbar() {
+export function Navbar(props) {
   const menuItems = [
     {
       name: "Prenda Superior",
       href: "#",
       subItems: [
-        { label: "Camisa", href: "#" },
-        { label: "Camiseta", href: "#" },
+        { label: "Camisas", href: "#" },
+        { label: "Busos", href: "#" },
         { label: "Abrigo", href: "#" },
-        { label: "Jersey", href: "#" },
-        { label: "JP", href: "#" },
+        { label: "Gabardina", href: "#" },
+        { label: "Sueter", href: "#" },
+        { label: "Kimono", href: "#" },
       ],
     },
     {
@@ -21,8 +22,6 @@ export function Navbar() {
       subItems: [
         { label: "Pantalon", href: "#" },
         { label: "Jeans", href: "#" },
-        { label: "Sudaderas", href: "#" },
-        { label: "Shorts", href: "#" },
       ],
     },
   ];
@@ -37,7 +36,7 @@ export function Navbar() {
       borderBottomWidth={1}
     >
       {/* Left content */}
-      <LeftContent data={menuItems} />
+      <LeftContent data={menuItems} setFiltro={props.setFiltro} />
       {/* Right content */}
       <RightContent />
       {/*mobile menu*/}
