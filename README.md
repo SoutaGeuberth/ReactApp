@@ -1,8 +1,3 @@
-# React + Vite
+# Gang Orca Clothing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta es una pagina web Resposive de marca de ropa personal, esta siendo elaborado para afianzar los conocimientos de las tecnologías y para un futuro emprendimiento, esta siendo elaborado con el uso de 2 Tecnologías; Frontend - React, Backend - .NET, el proyecto se encuentra albergado de forma local en una maquina virtual, la base de datos escogida fue SQL y esta siendo implementado por uso de contenedores, el manejo de la base de datos es por medio de DBeaver. A futuro se desea implementar Tecnologias nube tales como los bucket de Amazon S3, cambio a AWS RDS y por ultimo AWS Lambda para el manejo de solicitudes.
