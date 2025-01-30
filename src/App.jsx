@@ -20,6 +20,7 @@ function App() {
       })
       .then((data) => {
         setListaprendas(data);
+        console.log(data);
         // Aquí puedes hacer lo que necesites con los datos recibidos
       })
       .catch((error) => {
@@ -34,13 +35,13 @@ function App() {
       <Banner />
       <BodyLayout />
       {listaprendas
-        .filter((prenda) => prenda.categoria == filtro)
+        .filter((prenda) => prenda.category == filtro)
         .map((prenda, index) => (
           <ClothCard
             key={index}
-            tittle={prenda.tittle}
+            name={prenda.name}
             cost={prenda.cost}
-            src={prenda.src}
+            srcImg={prenda.srcImg}
           />
         ))}
 

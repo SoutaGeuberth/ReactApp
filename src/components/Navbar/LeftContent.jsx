@@ -92,7 +92,7 @@ export function LeftContent({ data, setFiltro }) {
                 fontWeight={"light"}
                 fontStyle={"italic"}
               >
-                <Button variant={"ghost"} onClick={() => setFiltro("camiseta")}>
+                <Button variant={"ghost"} onClick={() => setFiltro("Camiseta")}>
                   Camisetas
                 </Button>
                 <Button variant={"ghost"}>Camisas</Button>
