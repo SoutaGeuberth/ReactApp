@@ -92,15 +92,15 @@ export function LeftContent({ data, setFiltro }) {
                 fontWeight={"light"}
                 fontStyle={"italic"}
               >
-                <Button variant={"ghost"} onClick={() => setFiltro("Camiseta")}>
-                  Camisetas
-                </Button>
-                <Button variant={"ghost"}>Camisas</Button>
-                <Button variant={"ghost"}>Busos</Button>
-                <Button variant={"ghost"}>Gabardina</Button>
-                <Button variant={"ghost"}>Sueter</Button>
-                <Button variant={"ghost"}>Abrigo</Button>
-                <Button variant={"ghost"}>Kimono</Button>
+                {data[0].subItems.map((element, index) => (
+                  <Button
+                    key={index}
+                    variant={"ghost"}
+                    onClick={() => setFiltro(element.label)}
+                  >
+                    {element.label}
+                  </Button>
+                ))}
               </Group>
 
               <Group
@@ -110,8 +110,15 @@ export function LeftContent({ data, setFiltro }) {
                 fontWeight={"light"}
                 fontStyle={"italic"}
               >
-                <Button variant={"ghost"}>Pantalones</Button>
-                <Button variant={"ghost"}>Jeans</Button>
+                {data[1].subItems.map((element, index) => (
+                  <Button
+                    key={index}
+                    variant={"ghost"}
+                    onClick={() => setFiltro(element.label)}
+                  >
+                    {element.label}
+                  </Button>
+                ))}
               </Group>
             </Flex>
           </DrawerBody>

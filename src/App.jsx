@@ -28,7 +28,6 @@ function App() {
       });
   }, []);
 
-  useEffect(() => console.log("Cambie Filtro"), [filtro]);
   return (
     <Provider>
       <Navbar setFiltro={setFiltro} />
@@ -42,6 +41,9 @@ function App() {
             name={prenda.name}
             cost={prenda.cost}
             srcImg={prenda.srcImg}
+            description={prenda.description}
+            sizes={prenda.size}
+            amounts={prenda.amount}
           />
         ))}
 
