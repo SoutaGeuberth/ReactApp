@@ -33,10 +33,12 @@ function App() {
       <Navbar setFiltro={setFiltro} />
       <Banner />
       <BodyLayout />
+
       {listaprendas
-        .filter((prenda) => prenda.category == filtro)
+        .filter((prenda) => filtro === "" || prenda.category == filtro)
         .map((prenda, index) => (
           <ClothCard
+            idClothesSizes={prenda.idClothesSizes}
             key={index}
             name={prenda.name}
             cost={prenda.cost}

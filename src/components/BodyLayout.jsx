@@ -1,61 +1,44 @@
-import { Button, Flex, Box } from "@chakra-ui/react";
-import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "./ui/menu";
-import { LuArrowDown } from "react-icons/lu";
+import { Button, Flex } from "@chakra-ui/react";
+import {
+  MenuContent,
+  MenuRoot,
+  MenuTrigger,
+  MenuRadioItemGroup,
+  MenuRadioItem,
+} from "./ui/menu";
+import { useState } from "react";
+import { HiSortAscending } from "react-icons/hi";
 
 export function BodyLayout() {
+  const [value, setValue] = useState("");
   return (
-    <Flex justify={{ base: "center", md: "flex-end" }} m={"10px"} h={"20px"}>
-      <Box m={"10px"}>
-        <MenuRoot>
-          <MenuTrigger asChild>
-            <Button
-              size="sm"
-              variant="ghost"
-              fontFamily={"serif"}
-              fontWeight={"light"}
-              fontStyle={"italic"}
-            >
-              Filtros
-              <LuArrowDown />
-            </Button>
-          </MenuTrigger>
-          <MenuContent>
-            <MenuItem
-              asChild
-              value="naruto"
-              fontFamily={"serif"}
-              fontWeight={"light"}
-              fontStyle={"italic"}
-            >
-              <a target="_blank" rel="noreferrer">
-                Naruto
-              </a>
-            </MenuItem>
-            <MenuItem
-              asChild
-              value="one-piece"
-              fontFamily={"serif"}
-              fontWeight={"light"}
-              fontStyle={"italic"}
-            >
-              <a target="_blank" rel="noreferrer">
-                One Piece
-              </a>
-            </MenuItem>
-            <MenuItem
-              asChild
-              value="attack-on-titan"
-              fontFamily={"serif"}
-              fontWeight={"light"}
-              fontStyle={"italic"}
-            >
-              <a target="_blank" rel="noreferrer">
-                Attack on Titan
-              </a>
-            </MenuItem>
-          </MenuContent>
-        </MenuRoot>
-      </Box>
+    <Flex w="full" justifyContent="flex-end" p={3}>
+      <MenuRoot>
+        <MenuTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            fontFamily={"serif"}
+            fontWeight={"light"}
+            fontStyle={"italic"}
+          >
+            <HiSortAscending /> Sort
+          </Button>
+        </MenuTrigger>
+        <MenuContent
+          fontFamily={"serif"}
+          fontWeight={"light"}
+          fontStyle={"italic"}
+        >
+          <MenuRadioItemGroup
+            value={value}
+            onValueChange={(e) => setValue(e.value === value ? "" : e.value)}
+          >
+            <MenuRadioItem value="asc">Mayor precio</MenuRadioItem>
+            <MenuRadioItem value="desc">Menor Precio</MenuRadioItem>
+          </MenuRadioItemGroup>
+        </MenuContent>
+      </MenuRoot>
     </Flex>
   );
 }
