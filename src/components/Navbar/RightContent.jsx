@@ -2,6 +2,7 @@ import { Flex, IconButton, Input } from "@chakra-ui/react";
 import { InputGroup } from "../ui/input-group";
 import { LuBell, LuSearch } from "react-icons/lu";
 import { Avatar, AvatarGroup } from "../ui/avatar";
+import { ShoppingCart } from "./ShoppingCart";
 
 export function RightContent() {
   return (
@@ -23,6 +24,7 @@ export function RightContent() {
       <IconButton variant={"ghost"} display={{ base: "flex", md: "flex" }}>
         <LuBell />
       </IconButton>
+      <ShoppingCart />
       <AvatarGroup>
         <Avatar
           size="sm"

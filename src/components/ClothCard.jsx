@@ -15,6 +15,7 @@ import {
   SelectValueText,
 } from "./ui/select";
 import { useState } from "react";
+import { toaster } from "./ui/toaster";
 
 export function ClothCard(props) {
   const sizes = createListCollection({
@@ -111,11 +112,18 @@ export function ClothCard(props) {
                 }
                 return response.json();
               })
-              .then((data) => {
-                console.log(data);
+              .then(() => {
+                toaster.create({
+                  description: "Prenda agregada al carrito",
+                  type: "success",
+                });
               })
-              .catch((error) => {
-                console.error("Error:", error);
+
+              .catch(() => {
+                toaster.create({
+                  description: "Error al añadir al carrito",
+                  type: "error",
+                });
               });
           }}
         >

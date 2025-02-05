@@ -5,6 +5,7 @@ import { BodyLayout } from "./components/BodyLayout";
 import { ClothCard } from "./components/ClothCard";
 import { Footer } from "./components/Footer";
 import { useEffect, useState } from "react";
+import { Toaster } from "./components/ui/toaster";
 
 function App() {
   const [filtro, setFiltro] = useState("");
@@ -32,6 +33,7 @@ function App() {
     <Provider>
       <Navbar setFiltro={setFiltro} />
       <Banner />
+      <Toaster />
       <BodyLayout />
 
       {listaprendas

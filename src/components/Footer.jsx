@@ -10,7 +10,7 @@ import FooterLogo from "../assets/images/logo2.png";
 
 export function Footer() {
   return (
-    <Flex h={"12rem"}>
+    <Flex h={"12rem"} display={{ base: "none", md: "flex" }}>
       <Container bgColor={"blackAlpha.600"} fluid>
         <SimpleGrid
           column={"3"}
