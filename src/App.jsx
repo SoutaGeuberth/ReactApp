@@ -9,7 +9,7 @@ import { Toaster } from "./components/ui/toaster";
 
 function App() {
   const [filtro, setFiltro] = useState("");
-  const [listaprendas, setListaprendas] = useState([]);
+  const [listaprendas, setListaPrendas] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5002/listaprendas")
       .then((response) => {
@@ -20,7 +20,7 @@ function App() {
         return response.json(); // Convertir la respuesta en JSON
       })
       .then((data) => {
-        setListaprendas(data);
+        setListaPrendas(data);
         console.log(data);
         // Aquí puedes hacer lo que necesites con los datos recibidos
       })
@@ -48,6 +48,7 @@ function App() {
             description={prenda.description}
             sizes={prenda.size}
             amounts={prenda.amount}
+            setListaPrendas={setListaPrendas}
           />
         ))}
 

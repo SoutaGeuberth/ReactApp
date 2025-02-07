@@ -112,11 +112,12 @@ export function ClothCard(props) {
                 }
                 return response.json();
               })
-              .then(() => {
+              .then((data) => {
                 toaster.create({
                   description: "Prenda agregada al carrito",
                   type: "success",
                 });
+                props.setListaPrendas(data);
               })
 
               .catch(() => {
