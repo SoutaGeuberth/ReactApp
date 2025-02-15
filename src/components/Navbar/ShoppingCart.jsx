@@ -25,10 +25,12 @@ import {
 import { LuShoppingCart, LuTrash2 } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import { Field } from "../ui/field";
+//import { toaster } from "../ui/toaster";
 
-export const ShoppingCart = () => {
+export const ShoppingCart = (props) => {
   const [shoppingList, setShoppingList] = useState([]);
   useEffect(() => {
+    console.log("muevetePuta");
     fetch("http://localhost:5002/reserve")
       .then((response) => {
         // Verificar si la respuesta fue exitosa
@@ -45,7 +47,34 @@ export const ShoppingCart = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, []);
+  }, [props.toggle]);
+
+  const handleQuantityChange = (index, newValue) => {
+    const updatedList = [...shoppingList];
+    updatedList[index].totalAmount = newValue; // Actualiza el valor en la lista
+    setShoppingList(updatedList);
+  };
+
+  const handlePurchase = async () => {
+    try {
+      const updatedData = shoppingList.map((item) => ({
+        IdClothesSizes: item.idClothesSizes, // Ahora sí lo tenemos disponible
+        TotalAmount: item.totalAmount,
+      }));
+
+      const response = await fetch("http://localhost:5002/update-reserve", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedData),
+      });
+
+      if (!response.ok) throw new Error("Error al actualizar los datos");
+
+      alert("Compra realizada y datos actualizados");
+    } catch (error) {
+      console.error("Error en la compra:", error);
+    }
+  };
 
   return (
     <DrawerRoot size={"md"}>
@@ -81,6 +110,9 @@ export const ShoppingCart = () => {
                       <NumberInputRoot
                         defaultValue={item.totalAmount}
                         width="fit-content"
+                        onValueChange={(value) =>
+                          handleQuantityChange(index, value.valueAsNumber)
+                        }
                       >
                         <NumberInputField />
                       </NumberInputRoot>
@@ -116,7 +148,7 @@ export const ShoppingCart = () => {
           <DrawerActionTrigger asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerActionTrigger>
-          <Button>Save</Button>
+          <Button onClick={handlePurchase}>Comprar</Button>
         </DrawerFooter>
         <DrawerCloseTrigger />
       </DrawerContent>

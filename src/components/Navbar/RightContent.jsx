@@ -4,7 +4,7 @@ import { LuBell, LuSearch } from "react-icons/lu";
 import { Avatar, AvatarGroup } from "../ui/avatar";
 import { ShoppingCart } from "./ShoppingCart";
 
-export function RightContent() {
+export function RightContent(props) {
   return (
     <Flex align={"center"} gap={2}>
       <IconButton
@@ -24,7 +24,7 @@ export function RightContent() {
       <IconButton variant={"ghost"} display={{ base: "flex", md: "flex" }}>
         <LuBell />
       </IconButton>
-      <ShoppingCart />
+      <ShoppingCart toggle={props.toggle} setToggle={props.setToggle} />
       <AvatarGroup>
         <Avatar
           size="sm"

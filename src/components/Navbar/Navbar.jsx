@@ -52,7 +52,7 @@ export function Navbar(props) {
       {/* Left content */}
       <LeftContent data={menuItems} setFiltro={props.setFiltro} />
       {/* Right content */}
-      <RightContent />
+      <RightContent toggle={props.toggle} setToggle={props.setToggle} />
       {/*mobile menu*/}
     </HStack>
   );

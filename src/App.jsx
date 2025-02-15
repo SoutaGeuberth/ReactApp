@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
+  const [toggle, setToggle] = useState(false);
   const [filtro, setFiltro] = useState("");
   const [listaprendas, setListaPrendas] = useState([]);
   useEffect(() => {
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <Provider>
-      <Navbar setFiltro={setFiltro} />
+      <Navbar setFiltro={setFiltro} toggle={toggle} setToggle={setToggle} />
       <Banner />
       <Toaster />
       <BodyLayout />
@@ -49,6 +50,8 @@ function App() {
             sizes={prenda.size}
             amounts={prenda.amount}
             setListaPrendas={setListaPrendas}
+            toggle={toggle}
+            setToggle={setToggle}
           />
         ))}
 

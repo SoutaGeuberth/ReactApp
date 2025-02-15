@@ -118,6 +118,7 @@ export function ClothCard(props) {
                   type: "success",
                 });
                 props.setListaPrendas(data);
+                props.setToggle(!props.toggle);
               })
 
               .catch(() => {
